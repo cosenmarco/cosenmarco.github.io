@@ -29,6 +29,7 @@ permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: Europe/Berlin # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+words_per_minute: 160
 
 include:
   - _pages
@@ -58,7 +59,6 @@ plugins:
 author:
   name   : "Marco cosentino"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Software architect in Frankfurt"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
