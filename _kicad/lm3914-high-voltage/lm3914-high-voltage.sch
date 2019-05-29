@@ -143,9 +143,9 @@ F 3 "" H 1250 3800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2300 3200 2300 3250
-Text HLabel 950  800  0    50   Input ~ 6
+Text HLabel 950  800  0    50   Input ~ 10
 VCC
-Text HLabel 2050 3200 0    50   Input ~ 6
+Text HLabel 2050 3200 0    50   Input ~ 10
 IN
 $Comp
 L Device:D D1
@@ -381,13 +381,13 @@ Wire Wire Line
 Connection ~ 6150 2500
 Wire Wire Line
 	6150 2500 6150 2600
-Text Notes 6200 1700 0    50   ~ 0
+Text Notes 6200 1700 0    50   ~ 6
 V+
-Text Notes 6200 2450 0    50   ~ 0
+Text Notes 6200 2450 0    50   ~ 6
 E
-Text Notes 6800 3200 0    50   ~ 0
+Text Notes 6800 3200 0    50   ~ 6
 B
-Text Notes 6200 3500 0    50   ~ 0
+Text Notes 6200 3500 0    50   ~ 6
 C
 Wire Wire Line
 	8100 1750 8100 2700
@@ -407,7 +407,7 @@ F 3 "~" H 7150 2950 50  0001 C CNN
 	1    7150 2950
 	0    1    1    0   
 $EndComp
-Text Notes 7200 2950 0    50   ~ 0
+Text Notes 7200 2950 0    50   ~ 6
 Ib
 $Comp
 L Device:R R3
@@ -434,4 +434,212 @@ Wire Wire Line
 Connection ~ 7550 3750
 Wire Wire Line
 	7550 3750 8100 3750
+$Comp
+L power:GND #PWR?
+U 1 1 5CEEDD06
+P 1900 7150
+F 0 "#PWR?" H 1900 6900 50  0001 C CNN
+F 1 "GND" H 1905 6977 50  0000 C CNN
+F 2 "" H 1900 7150 50  0001 C CNN
+F 3 "" H 1900 7150 50  0001 C CNN
+	1    1900 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5CEEDD10
+P 1900 5500
+F 0 "D2" V 1939 5383 50  0000 R CNN
+F 1 "LED" V 1848 5383 50  0000 R CNN
+F 2 "" H 1900 5500 50  0001 C CNN
+F 3 "~" H 1900 5500 50  0001 C CNN
+	1    1900 5500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5CEEDD1A
+P 1900 4900
+F 0 "R1" H 1970 4946 50  0000 L CNN
+F 1 "3.9K" H 1970 4855 50  0000 L CNN
+F 2 "" V 1830 4900 50  0001 C CNN
+F 3 "" H 1900 4900 50  0001 C CNN
+	1    1900 4900
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	1900 5650 1900 5900
+Wire Wire Line
+	1900 5150 1900 5350
+Connection ~ 1900 7150
+Wire Wire Line
+	1900 7150 2650 7150
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5CEEDD28
+P 1150 5750
+F 0 "BT?" H 1268 5846 50  0001 L CNN
+F 1 "48V" H 1268 5800 50  0000 L CNN
+F 2 "" V 1150 5810 50  0001 C CNN
+F 3 "~" V 1150 5810 50  0001 C CNN
+	1    1150 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5CEEDD32
+P 2650 6850
+F 0 "BT?" H 2768 6946 50  0001 L CNN
+F 1 "1.25V" H 2768 6900 50  0000 L CNN
+F 2 "" V 2650 6910 50  0001 C CNN
+F 3 "~" V 2650 6910 50  0001 C CNN
+	1    2650 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 4650 1150 5550
+Wire Wire Line
+	1150 4650 1900 4650
+Wire Wire Line
+	1150 5850 1150 7150
+Wire Wire Line
+	1150 7150 1900 7150
+Wire Wire Line
+	1900 4650 1900 4750
+Wire Wire Line
+	1900 5050 1900 5150
+Connection ~ 1900 5150
+Wire Wire Line
+	2650 6500 2650 6550
+Wire Wire Line
+	2650 7150 2650 6950
+$Comp
+L pspice:ISOURCE I?
+U 1 1 5CEEDD45
+P 3850 6500
+F 0 "I?" V 3335 6500 50  0001 C CNN
+F 1 "LM3914V - 5.6mA" H 3472 6500 50  0000 R CNN
+F 2 "" H 3850 6500 50  0001 C CNN
+F 3 "~" H 3850 6500 50  0001 C CNN
+	1    3850 6500
+	-1   0    0    1   
+$EndComp
+$Comp
+L pspice:ISOURCE I?
+U 1 1 5CEEDD4F
+P 1900 6400
+F 0 "I?" V 1385 6400 50  0001 C CNN
+F 1 "βIb" H 1522 6400 50  0000 R CNN
+F 2 "" H 1900 6400 50  0001 C CNN
+F 3 "~" H 1900 6400 50  0001 C CNN
+	1    1900 6400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1900 6800 1900 7150
+$Comp
+L Device:D D?
+U 1 1 5CEEDD5A
+P 2650 6350
+F 0 "D?" V 2696 6271 50  0001 R CNN
+F 1 "Deb" V 2650 6271 50  0000 R CNN
+F 2 "" H 2650 6350 50  0001 C CNN
+F 3 "~" H 2650 6350 50  0001 C CNN
+	1    2650 6350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1900 5900 2650 5900
+Wire Wire Line
+	2650 5900 2650 6200
+Connection ~ 1900 5900
+Wire Wire Line
+	1900 5900 1900 6000
+Text Notes 1950 5100 0    50   ~ 6
+V+
+Text Notes 1950 5850 0    50   ~ 6
+E
+Text Notes 2550 6600 0    50   ~ 6
+B
+Text Notes 1950 6900 0    50   ~ 6
+C
+Wire Wire Line
+	3850 5150 3850 6100
+Wire Wire Line
+	1900 5150 2750 5150
+Wire Wire Line
+	3850 6900 3850 7150
+Connection ~ 2650 7150
+$Comp
+L Graphic:SYM_Arrow_Normal #SYM?
+U 1 1 5CEEDD70
+P 2900 6350
+F 0 "#SYM?" H 2900 6410 50  0001 C CNN
+F 1 "SYM_Arrow_Normal" H 2910 6300 50  0001 C CNN
+F 2 "" H 2900 6350 50  0001 C CNN
+F 3 "~" H 2900 6350 50  0001 C CNN
+	1    2900 6350
+	0    1    1    0   
+$EndComp
+Text Notes 2950 6350 0    50   ~ 6
+Ib
+$Comp
+L Device:R R3
+U 1 1 5CEEDD7B
+P 3300 6800
+F 0 "R3" H 3369 6754 50  0000 L CNN
+F 1 "620" H 3369 6845 50  0000 L CNN
+F 2 "" V 3230 6800 50  0001 C CNN
+F 3 "" H 3300 6800 50  0001 C CNN
+	1    3300 6800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2650 7150 3300 7150
+Wire Wire Line
+	2650 6550 3300 6550
+Wire Wire Line
+	3300 6550 3300 6650
+Connection ~ 2650 6550
+Wire Wire Line
+	2650 6550 2650 6650
+Wire Wire Line
+	3300 6950 3300 7150
+Connection ~ 3300 7150
+Wire Wire Line
+	3300 7150 3850 7150
+$Comp
+L Device:R R2
+U 1 1 5CF04659
+P 2350 4650
+F 0 "R2" V 2143 4650 50  0000 C CNN
+F 1 "3.9K" V 2234 4650 50  0000 C CNN
+F 2 "" V 2280 4650 50  0001 C CNN
+F 3 "" H 2350 4650 50  0001 C CNN
+	1    2350 4650
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	1900 4650 2200 4650
+Connection ~ 1900 4650
+$Comp
+L Device:D D1
+U 1 1 5CF0A5F7
+P 2750 4900
+F 0 "D1" V 2796 4821 50  0000 R CNN
+F 1 "1N4002" V 2705 4821 50  0000 R CNN
+F 2 "" H 2750 4900 50  0001 C CNN
+F 3 "~" H 2750 4900 50  0001 C CNN
+	1    2750 4900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2500 4650 2750 4650
+Wire Wire Line
+	2750 4650 2750 4750
+Wire Wire Line
+	2750 5050 2750 5150
+Connection ~ 2750 5150
+Wire Wire Line
+	2750 5150 3850 5150
 $EndSCHEMATC

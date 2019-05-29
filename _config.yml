@@ -100,6 +100,10 @@ defaults:
 category_archive:
   type: liquid
   path: /categories/
+
 tag_archive:
   type: liquid
   path: /tags/
+
+footer_scripts:
+  - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js
