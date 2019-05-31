@@ -344,7 +344,7 @@ L pspice:ISOURCE I?
 U 1 1 5CF0DFBD
 P 8100 3100
 F 0 "I?" V 7585 3100 50  0001 C CNN
-F 1 "LM3914V - 5.6mA" H 7722 3100 50  0000 R CNN
+F 1 "LM3914V - 10mA" H 7722 3100 50  0000 R CNN
 F 2 "" H 8100 3100 50  0001 C CNN
 F 3 "~" H 8100 3100 50  0001 C CNN
 	1    8100 3100
@@ -381,13 +381,13 @@ Wire Wire Line
 Connection ~ 6150 2500
 Wire Wire Line
 	6150 2500 6150 2600
-Text Notes 6200 1700 0    50   ~ 6
+Text Notes 6200 1700 0    50   ~ 10
 V+
-Text Notes 6200 2450 0    50   ~ 6
+Text Notes 6200 2450 0    50   ~ 10
 E
-Text Notes 6800 3200 0    50   ~ 6
+Text Notes 6800 3200 0    50   ~ 10
 B
-Text Notes 6200 3500 0    50   ~ 6
+Text Notes 6200 3500 0    50   ~ 10
 C
 Wire Wire Line
 	8100 1750 8100 2700
@@ -407,7 +407,7 @@ F 3 "~" H 7150 2950 50  0001 C CNN
 	1    7150 2950
 	0    1    1    0   
 $EndComp
-Text Notes 7200 2950 0    50   ~ 6
+Text Notes 7200 2950 0    50   ~ 10
 Ib
 $Comp
 L Device:R R3
@@ -518,7 +518,7 @@ L pspice:ISOURCE I?
 U 1 1 5CEEDD45
 P 3850 6500
 F 0 "I?" V 3335 6500 50  0001 C CNN
-F 1 "LM3914V - 5.6mA" H 3472 6500 50  0000 R CNN
+F 1 "LM3914V - 10mA" H 3472 6500 50  0000 R CNN
 F 2 "" H 3850 6500 50  0001 C CNN
 F 3 "~" H 3850 6500 50  0001 C CNN
 	1    3850 6500
@@ -555,13 +555,13 @@ Wire Wire Line
 Connection ~ 1900 5900
 Wire Wire Line
 	1900 5900 1900 6000
-Text Notes 1950 5100 0    50   ~ 6
+Text Notes 1950 5100 0    50   ~ 10
 V+
-Text Notes 1950 5850 0    50   ~ 6
+Text Notes 1950 5850 0    50   ~ 10
 E
-Text Notes 2550 6600 0    50   ~ 6
+Text Notes 2550 6600 0    50   ~ 10
 B
-Text Notes 1950 6900 0    50   ~ 6
+Text Notes 1950 6900 0    50   ~ 10
 C
 Wire Wire Line
 	3850 5150 3850 6100
@@ -581,7 +581,7 @@ F 3 "~" H 2900 6350 50  0001 C CNN
 	1    2900 6350
 	0    1    1    0   
 $EndComp
-Text Notes 2950 6350 0    50   ~ 6
+Text Notes 2950 6350 0    50   ~ 10
 Ib
 $Comp
 L Device:R R3
