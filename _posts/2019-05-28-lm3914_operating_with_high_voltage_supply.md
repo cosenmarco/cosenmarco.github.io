@@ -152,6 +152,8 @@ A couple of notes about the build:
    (as long as β is in the hundreds), we can replace Q1 with basically any PNP BJT.
 3. D1 is a [1N4007](https://www.vishay.com/docs/88503/1n4001.pdf). Not a big deal.
 4. The LM3924V is not a TI original but rather some clone.
+5. Measurements were taken with my [Solartron Schlumberge 7150plus](https://holzleitner.com/el/solartron-7150/index-en.html)
+   which is in good working order, as far as I can tell, but not calibrated.
 
 ## Measurements
 
