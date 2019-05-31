@@ -104,7 +104,7 @@ at node VA<sub>D1</sub> (looking again at Fig. 1) the potential could be
 
    $$ VA_{D1} = V_{sat} + V_{LED} \approx 2.8V $$
 
-   Note: This gives us a LED current of (48V - VA<sub>D1</sub>) / R1 = 11.58mA
+   Note: This gives us a LED current of (48V - VA<sub>D1</sub>) / R2 = 11.58mA
    {: .notice--info}
 
    We calculated previously that V<sub>+</sub> = 4V so 
