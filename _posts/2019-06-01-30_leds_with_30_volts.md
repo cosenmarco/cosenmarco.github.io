@@ -1,6 +1,6 @@
 ---
 title: "30 LEDs with 30 Volts"
-date: 2019-05-24 15:34:05 +0200
+date: 2019-06-03 23:07:05 +0200
 categories: electronics
 tags: 
     - electronics
@@ -76,16 +76,45 @@ and provide a resistor with value 3.6K to set the I<sub>L</sub> current also to 
 
 ### Operating with a high voltage supply
 
-The application to use the LM3914V with a supply voltage which is higher as the absolute maximum (25V)
-is slightly more complicated. Fig. 3 reports the application from the datasheet.
+I made [a post](/electronics/lm3914_operating_with_high_voltage_supply/) about this application
+so I'll assume the reader is familiar with this application as well. If not please read the 
+post before continuing.
 
-FIG
+## Merging the two applications into one
 
-In order to understand the circuit, we have first to understand the operating mode of transistor Q1.
-Since the collector is connected to GND, the configuration is [common collector](https://en.wikipedia.org/wiki/Common_collector).
+The high voltage supply application shows that we need to let the LM3914V operate their
+output drivers in the saturation region and have the leds current set by the R2 resistor
+based on the formula
 
-Every time I see a transistor, I like (in this case need) to understand in which region of operation
-it's working. 
+$$ I_{LED} = { {V_{CC} - 2.8V} \over R2 } $$
 
-We can calculate that since ??? the ratio between V<sub>E</sub> and V<sub>B</sub> is ≈ 1 and therefore
-V<sub>E</sub> ≈ REF_OUT = 1.2V
+so let's say we desire to have a current of 12mA.
+
+$$ R2 = { {V_{CC} - 2.8V} \over I_{LED} } = { 30V - 2.8V \over 0.012 } = 2260\Omega \approx 2.2K\Omega $$
+
+and we need to make sure that we set the current flowing out of the voltage reference to ca. 20mA
+to give us a margin for guaranteeing the region of operation of the LM3914's drivers. With this 
+we can calculate the values for the three V<sub>ref</sub> resistors using Ohm's law and
+the multiplication factor of ca. 10 which the LM3914 uses to calculate the I<sub>LED</sub> from I<sub>ref</sub>:
+
+1. $ R_{ref1} = (1.25V / 0.020A) * 10 = 620\Omega $
+2. $ R_{ref2} = (2.50V / 0.020A) * 10 = 1240\Omega \approx 1.2K\Omega $
+3. $ R_{ref3} = (3.75V / 0.020A) * 10 = 1860\Omega \approx 1.8K\Omega $
+
+With that sorted out, we need to make sure the supply voltage is adequately 
+high to provide enough juice to the last LM3914 for it to provide a V<sub>ref</sub>
+of 3.75V.
+
+I struggled a bit on this, thinking I had to adjust somehow resistor values or using
+some fancy technique to accomplish that but after the analysis of the 
+[high voltage supply application](/electronics/lm3914_operating_with_high_voltage_supply/)
+the answer became clear and easy: I just had to connect the V<sub>ref3</sub> to the base
+of the PNP so that basically the V<sub>+</sub> would become 3.75V + V<sub>EB</sub> + V<sub>LED</sub>
+which is basically as high as 6.5V using a LED with a somewhat high voltage drop.
+
+Last but not least I wanted (as Paul envisioned for his leak detector) the LED which
+is part of the V<sub>+</sub> regulation, act as an "overflow" indicator for the display
+basically being dark when there's at least one led ON in the display and lit when
+there's no led ON. This requirement helps setting the value of resistor R1.
+
+Say we want a current of... TODO
