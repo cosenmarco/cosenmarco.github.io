@@ -180,10 +180,12 @@ V<sub>out</sub> is the voltage at the output port on the LM3914V at the lit led
 
 In this post we've seen how the application is supposed to work on paper, analyzing the bias points of the
 various components and understanding what happens in every part of the circuit and gaining some in-deep
-understanding (if you didn't get bored by my writing before you reaching here) of how the LM3914 works.
+understanding of how the LM3914 works.
 
 I'm also pretty happy with how close the measurements turned out to be to the calculated values given
-all approximations we did during the course of the analysis.
+all approximations we did during the course of the analysis. I think most of the error comes from the fact
+that I considered a voltage drop across diodes to be the same regardless of the current flowing through them
+(a simplified model of the real thing) to make it easier to reason about it.
 
 I hope this post was helpful to whom is interested in the LM3914. It certainly was interesting and a great
 exercise to me to write it: this helped me understanding this application in order to design a display
