@@ -57,16 +57,10 @@ plugins:
   - jekyll-github-metadata
 
 author:
-  name   : "Marco cosentino"
-  avatar : "/assets/images/bio-photo.jpg"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/cosenmarco"
-    - label: "License"
-      icon: "fas fa-fw fa-balance-scale"
-      url: "http://creativecommons.org/licenses/by-sa/4.0/"
-
+  name: "Marco cosentino"
+  avatar: "/assets/images/marco-cosentino.jpg"
+  github: cosenmarco
+  bio: "Software architect with a passion for elecronics, guitars, wood and food."
 
 footer:
   links:
@@ -107,3 +101,4 @@ tag_archive:
 
 footer_scripts:
   - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js
+  - https://use.fontawesome.com/releases/v5.8.2/js/all.js

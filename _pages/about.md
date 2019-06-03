@@ -22,14 +22,20 @@ E-mail: cosentino.ma at gmail.com
 
 ## Cookie policy and personal information
 
-This site uses Google Analytics to track usage in a completely anonymous way. IP addresses are also
-obfuscated and I don't collect any sort of user identifier or [PII](https://en.wikipedia.org/wiki/Personal_data) 
+This site uses Google Analytics to track usage in a completely anonymous way.
+IP addresses are also obfuscated and I don't collect any sort of user i
+dentifier or [PII](https://en.wikipedia.org/wiki/Personal_data) 
 which could be associated to individual users.
 
-Users can 
+No cookies will be used if you disagree from the pop-up bar shown when you 
+come to the site the first time. In such a case, Google Analytics is also 
+disabled and np information will be collected about the visit.
+
+Users who agreed to cookies usage can 
 <a href="#" onclick="document.cookie='cookiebar=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/'; setupCookieBar(); return false;">opt out</a>
-even from that anonymous statistics gathering from any page using the provided link in any page.
-No cookies will be used if you disagree from the pop-up bar shown when you come to the site the first time.
+from every page using the provided link in  the footer. In such a case cookies 
+will be cleared and the next visit will be completely anonymous.
+
 More about Google Analytics cookies [here](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id)
 
 ### Technical
