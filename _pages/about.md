@@ -3,20 +3,39 @@ permalink: /about/
 title: "About"
 ---
 
-This little blog of mine serves my need to produce some notes I want to put down in
-a form that can also be shared with others who may be interested in an attempt
+This little blog of mine serves my need to produce some notes in
+a form that can also be shared with people who may be interested, in an attempt
 to give back to the internet community.
 
-Please note that I value copyright and anything I share here is original material
+Please note that I value copyright: anything I share here is original material
 protected by the Creative Commons license (see below). If you feel this is not
 the case or you want to use the material on this site please contact me.
 
+## Contact information / Impressum
 
-## License and disclaimer
+Marco Cosentino
+Spechtstr. 9
+63263 Neu-Isenburg
+GERMANY
 
-cosenmarco's blog by Marco Cosentino is licensed under a
+E-mail: cosentino.ma at gmail.com
+
+## Cookies and personal information
+
+This site uses Google Analytics to track usage in a completely anonymous way. IP addresses are also
+obfuscated and I don't collect any sort of user identifier or [PII](https://en.wikipedia.org/wiki/Personal_data) 
+which could be associated to individual users.
+
+Users can opt-out even from that anonymous statistics gathering from any page using the provided link in any page.
+No cookies will get dropped if you disagree from the pop-up bar shown when you come to the site the first time.
+More about Google Analytics cookies [here](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id)
+
+## License
+
+cosenmarco's notes by Marco Cosentino is licensed under the
 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
+## Disclaimer
 
 ### No liability for any errors or omissions
 The information contained in this Website has been provided by me for information purposes only.  This information does not constitute legal, professional or commercial advice.  While every care has been taken to ensure that the content is useful and accurate, I give no guarantees, undertakings or warranties in this regard, and does not accept any legal liability or responsibility for the content or the accuracy of the information so provided, or, for any loss or damage caused arising directly or indirectly in connection with reliance on the use of such information.  Any errors or omissions brought to my attention will be corrected as soon as possible.
