@@ -13,22 +13,48 @@ the case or you want to use the material on this site please contact me.
 
 ## Contact information / Impressum
 
-Marco Cosentino
-Spechtstr. 9
-63263 Neu-Isenburg
+Marco Cosentino \\
+Spechtstr. 9 \\
+63263 Neu-Isenburg \\
 GERMANY
 
 E-mail: cosentino.ma at gmail.com
 
-## Cookies and personal information
+## Cookie policy and personal information
 
 This site uses Google Analytics to track usage in a completely anonymous way. IP addresses are also
 obfuscated and I don't collect any sort of user identifier or [PII](https://en.wikipedia.org/wiki/Personal_data) 
 which could be associated to individual users.
 
-Users can opt-out even from that anonymous statistics gathering from any page using the provided link in any page.
-No cookies will get dropped if you disagree from the pop-up bar shown when you come to the site the first time.
+Users can 
+<a href="#" onclick="document.cookie='cookiebar=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/'; setupCookieBar(); return false;">opt out</a>
+even from that anonymous statistics gathering from any page using the provided link in any page.
+No cookies will be used if you disagree from the pop-up bar shown when you come to the site the first time.
 More about Google Analytics cookies [here](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id)
+
+### Technical
+
+I use [Cookie Bar](https://cookie-bar.eu/) to gather cookie consent. I use the following snippet to 
+turn on / off Google Analytics and clear cookies in case of opt out:
+```js
+    window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    let matches = document.cookie.match(/(;)?cookiebar=([^;]*);?/);
+    let cookieValue = Array.isArray(matches) ? matches[2] : '';
+    if (cookieValue == 'CookieAllowed') {
+        ga('create', 'UA-141297186-1', 'auto');
+        ga('set', 'allowAdFeatures', false);
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+    } else {
+        ga('remove', 'UA-141297186-1')
+        document.cookie.split(";").forEach(function (c) { 
+            document.cookie = c.replace(/^ +/, "")
+                .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+        });
+    }
+```
+
+Please let me know if this is somewhat incorrect. I tested it locally on my browser and it worked fine.
 
 ## License
 

@@ -1,10 +1,20 @@
-<!-- Google Analytics -->
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&always=1&noGeoIp=1&refreshPage=1&top=1&showNoConsent=1&showPolicyLink=1&privacyPage=%2Fabout%2F"></script>
+
+    <!-- Google Analytics -->
 <script>
     window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
-    ga('create', 'UA-141297186-1', 'auto');
-    ga('set', 'allowAdFeatures', false);
-    ga('set', 'anonymizeIp', true);
-    ga('send', 'pageview');
+    let matches = document.cookie.match(/(;)?cookiebar=([^;]*);?/);
+    let cookieValue = Array.isArray(matches) ? matches[2] : '';
+    if (cookieValue == 'CookieAllowed') {
+        ga('create', 'UA-141297186-1', 'auto');
+        ga('set', 'allowAdFeatures', false);
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+    } else {
+        ga('remove', 'UA-141297186-1')
+        document.cookie.split(";").forEach(function (c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+    }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
