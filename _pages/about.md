@@ -34,7 +34,7 @@ disabled and np information will be collected about the visit.
 Users who agreed to cookies usage can 
 <a href="#" onclick="document.cookie='cookiebar=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/'; setupCookieBar(); return false;">opt out</a>
 from every page using the provided link in  the footer. In such a case cookies 
-will be cleared and the next visit will be completely anonymous.
+will be cleared and the next visit will not be tracked whatsoever.
 
 More about Google Analytics cookies [here](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id)
 
