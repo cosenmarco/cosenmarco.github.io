@@ -57,7 +57,7 @@ plugins:
   - jekyll-github-metadata
 
 author:
-  name: "Marco cosentino"
+  name: "Marco Cosentino"
   avatar: "/assets/images/marco-cosentino.jpg"
   github: cosenmarco
   bio: "Software architect with a passion for elecronics, guitars, wood and food."
