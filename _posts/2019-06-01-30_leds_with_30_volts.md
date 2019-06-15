@@ -1,6 +1,6 @@
 ---
 title: "30 LEDs with 30 Volts"
-date: 2019-06-03 23:07:05 +0200
+date: 2019-06-15 15:29:05 +0200
 categories: electronics
 tags: 
     - electronics
@@ -43,10 +43,13 @@ by a 30V power supply by combining and extending the two applications
 
 ## Understanding the applications in the datasheet
 
-### 20-LED dot-mode display
+Before showing the circuit I came up with and the measurements, I'd like
+to show reasoning I did by breaking down the examples
+provided in the datasheet. This will help understanding the final desing.
 
-Before moving on to the final circuit we may want to break down the examples provided in the 
-datasheet to better understand the final design. Let's start with the easy one: "20-Segment Meter with Mode Switch"
+Let's start with the easy one: "20-Segment Meter with Mode Switch"
+
+### 20-LED dot-mode display
 
 In the schematic below (Fig. 1) I removed the switch between bar / dot mode to make it more readable.
 
@@ -57,33 +60,41 @@ In the schematic below (Fig. 1) I removed the switch between bar / dot mode to m
 
 The way dot mode carry is implemented, is described quite well in the datasheet so I'll not talk about that here.
 
-Like shown in Fig. 2, the way the two devices divide the input range between the two of them is also 
-pretty easy to understand:
-the two internal voltage references are basically connected in series like in the diagram below and the two 
-internal resistor dividers connected between RLO and RHI for each of the two devices will have the ranges
-0V 🠒 1.2V assigned to the first LM3914V and the range 1.2V 🠒 2.4V assigned to the second one.
-Additionally the resistors R1 and R3 would set the I<sub>L</sub> ≅ 10mA.
+Like shown in Fig. 2, the way the two devices divide the input range
+between the two of them is also pretty easy to understand:
+the two internal voltage references are basically connected in series 
+like in the diagram below and the two internal resistor dividers 
+connected between RLO and RHI for each of the two devices will have the 
+ranges 0V 🠒 1.2V assigned to the first LM3914V and the range 
+1.2V 🠒 2.4V assigned to the second one.
+
+Additionally the resistors R1 and R3 would set the I<sub>L</sub>
+to ca. 10mA.
 
 {% include figure 
     image_path = "/assets/images/30-volt-30-led/20-segment-vref.svg" 
     caption = "Fig 2 - Voltage references arrangement in the 20-segment dot mode display"
 %}
 
-How to extend this to 30 LEDs is at this point fairly straightforward: you would need to add
-obviously another LM3914V, replicate the dot carry wiring, wind up the 
-third voltage reference in series with the second (so that the third driver gets the portion 2.4V 🠒 3.6V)
-and provide a resistor with value 3.6K to set the I<sub>L</sub> current also to 10mA. So far so good.
+How to extend this to 30 LEDs is at this point fairly straightforward:
+one would need to add obviously another LM3914V, replicate the dot 
+carry wiring, wind up the third voltage reference in series with the
+second (so that the third driver gets the portion 2.4V 🠒 3.6V)
+and provide a resistor with value 3.6KΩ to set the I<sub>L</sub> current
+also to 10mA. So far so good.
 
 ### Operating with a high voltage supply
 
-I made [a post](/electronics/lm3914_operating_with_high_voltage_supply/) about this application
-so I'll assume the reader is familiar with this application as well. If not please read the post before continuing.
+I made [a post](/electronics/lm3914_operating_with_high_voltage_supply/)
+about this application so I'll assume the reader is familiar with this
+application as well. If not please read the post before continuing.
+
 
 ## Merging the two applications into one
 
-The high voltage supply application shows that we need to let the LM3914V operate their
-output drivers in the saturation region and have the leds current set by the R2 resistor
-based on the formula
+The high voltage supply application shows that we need to let the LM3914V
+operate their output drivers in the saturation region and have the leds
+current set by the R2 resistor based on the formula
 
 $$ I_{LED} = { {V_{CC} - 2.8V} \over R2 } $$
 
@@ -224,6 +235,9 @@ Here a few measurements from the final prototype with the following notes
 | I<sub>D1</sub>OFF   | 0.91mA            | 0.5mA (spec)         |
 | I<sub>D1</sub>ON    | 10.49mA           | N/A                  |
 | I<sub>LM3914</sub>  | 29.19mA           | 29.4mA (assumption)  |
+
+
+## Conclusions
 
 Here as well I'm pretty happy about how measurements turned out to 
 be compared to calculated or assumed values.
