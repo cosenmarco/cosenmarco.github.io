@@ -11,12 +11,7 @@ Please note that I value copyright: anything I share here is original material
 protected by the Creative Commons license (see below). If you feel this is not
 the case or you want to use the material on this site please contact me.
 
-## Contact information / Impressum
-
-Marco Cosentino \\
-Spechtstr. 9 \\
-63263 Neu-Isenburg \\
-GERMANY
+## Contact information
 
 E-mail: cosentino.ma at gmail.com
 
